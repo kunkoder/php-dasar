@@ -16,7 +16,7 @@ Sebelum memulai, pastikan telah terinstall:
 * Web server
 * Materi P1-Design
 
-## :open_file_folder: Struktur Folder P1-Design
+**Struktur Folder P1-Design**
 
 ```text
 ├── assets
