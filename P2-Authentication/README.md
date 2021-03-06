@@ -149,7 +149,7 @@ Sebelum memulai, pastikan telah terinstall beberapa tools:
 						$_SESSION["admin"] =  true;
 						echo"
 						<script>
-						document.location.href = 'admin.php';
+							document.location.href = 'admin.php';
 						</script>";
 					}
 					else {
