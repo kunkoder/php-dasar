@@ -21,12 +21,16 @@ Sebelum memulai, pastikan telah terinstall:
 ```text
 ├── assets
 │   └── ...
+├── images
+│   └── ...
+├── README.md
 ├── admin.html
 ├── edit.html
 ├── index.html
 ├── login.html
 ├── profile.html
-└── register.html
+├── register.html
+└── sosmed.sql
 ```
 
 ## :computer: Langkah Kerja
