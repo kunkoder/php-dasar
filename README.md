@@ -18,7 +18,11 @@ Sebelum memulai, pastikan telah terinstall:
 
 ```text
 ├── P1-Design
+│   └── ...
 ├── P2-Authentication
+│   └── ...
+├── LICENSE
+└── README.md
 ```
 
 >Note: materi akan diupload tiap pekan selama praktikum berlangsung.
