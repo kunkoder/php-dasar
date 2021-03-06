@@ -8,7 +8,7 @@ Repository ini berisi projek aplikasi berbasis web yang menerapkan dasar - dasar
 
 ## :package: Prasyarat
 
-Sebelum memulai, pastikan telah terinstall beberapa tools:
+Sebelum memulai, pastikan telah terinstall:
 * MySQL atau MariaDB
 * PHP 5 atau PHP 7
 * Text editor
