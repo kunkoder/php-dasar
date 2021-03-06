@@ -38,11 +38,18 @@ Sebelum memulai, pastikan telah terinstall:
 	**index.php**
 	```bash
 	<?php
-		require  "config.php";
+		require "config.php";
 		session_start();
 		date_default_timezone_set("Asia/Jakarta");
 
-		// Skip
+		// Memeriksa user logout atau belum login
+		if(!isset($_SESSION["login"]) || isset($_GET["logout"])) {
+			session_destroy();
+			echo"
+			<script>
+				document.location.href = 'login.php';
+			</script>";
+		}
 
 		$user_id = $_SESSION["login"];
 		$user = findOne("SELECT * FROM user WHERE id = '$user_id'");
