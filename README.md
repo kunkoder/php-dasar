@@ -31,4 +31,4 @@ Sebelum memulai, pastikan telah terinstall beberapa tools:
 
 ## :balance_scale: Lisensi
 
-[MIT License](https://github.com/kunkoder/php-dasar/blob/main/LICENSE).
+[MIT License](https://github.com/kunkoder/php-dasar/blob/main/LICENSE)
