@@ -205,10 +205,20 @@ Sebelum memulai, pastikan telah terinstall:
 			</script>";
 		}
 	?>
+
+	<!-- Skip -->
+
+	<li class="nav-item">
+		<a href="?logout" class="nav-link" role="button">
+			<i class="ni ni-user-run d-lg-none"></i>
+			<span class="nav-link-inner--text">Logout</span>
+		</a>
+	</li>
 	```
 	
 	* `session_start();` mengizinkan halaman mengakses variabel `$_SESSION` untuk pengecekan autentifikasi.
 	* `if(!isset($_SESSION["login"])  ||  isset($_GET["logout"]))` mencegah user yang belum login atau yang sudah logout untuk mengakses halaman.
 	* `session_destroy();` menghapus session.
+	* `<a href="?logout">` mengirimkan method get dengan nama `logout` ke halaman ini.
 
 > Note: simpan folder pada directory `C:\xampp\htdocs` jika menggunakan XAMPP atau jalankan perintah `php -S localhost:8000` untuk menggunakan php server.
