@@ -14,8 +14,7 @@ Sebelum memulai, pastikan telah terinstall beberapa tools:
 * Text editor
 * Web browser
 * Web server
-
->Note: jangan lupa mempelajari dan mendownload materi sebelumnya P1-Design
+* Materi P1-Design
 
 ## :open_file_folder: Struktur Folder P1-Design
 
@@ -207,19 +206,5 @@ Sebelum memulai, pastikan telah terinstall beberapa tools:
 	* `session_start();` mengizinkan halaman mengakses variabel `$_SESSION` untuk pengecekan autentifikasi.
 	* `if(!isset($_SESSION["login"])  ||  isset($_GET["logout"]))` mencegah user yang belum login atau yang sudah logout untuk mengakses halaman.
 	* `session_destroy();` menghapus session.
-
-## :open_file_folder: Struktur Folder Terkini
-
-```text
-├── assets
-│   └── ...
-├── admin.html
-├── config.php
-├── edit.html
-├── index.php
-├── login.php
-├── profile.html
-└── register.php
-```
 
 > Note: simpan folder pada directory `C:\xampp\htdocs` jika menggunakan XAMPP atau jalankan perintah `php -S localhost:8000` untuk menggunakan php server.
