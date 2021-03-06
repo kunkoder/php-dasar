@@ -4,7 +4,6 @@
 Repository ini berisi projek aplikasi berbasis web yang menerapkan dasar - dasar bahasa pemrograman PHP. Materi yang terdapat pada repository ini diantaranya:
 * P1-Design
 * P2-Authentication
-* P3-CRUD
 
 ## :package: Prasyarat
 
@@ -20,7 +19,6 @@ Sebelum memulai, pastikan telah terinstall:
 ```text
 ├── P1-Design
 ├── P2-Authentication
-├── P3-CRUD
 ```
 
 >Note: materi akan diupload tiap pekan selama praktikum berlangsung.
