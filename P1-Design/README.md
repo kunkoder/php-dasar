@@ -17,15 +17,17 @@ Sebelum memulai, pastikan telah terinstall beberapa tools:
 
 > Note: template argon design system dapat didownload [disini](https://github.com/creativetimofficial/argon-design-system).
 
-## :floppy_disk: Design Database
+## :pushpin: Design Database
 
 * Buat database di MySQL dengan nama `sosmed`.
 * Buat tabel `user` di dalam database sosmed seperti gambar berikut.
   ![alt text](https://raw.githubusercontent.com/kunkoder/php-dasar/master/P1-Design/tabel_user.png)
 * Buat tabel `post` di dalam database sosmed seperti gambar berikut.
+  ![alt text](https://raw.githubusercontent.com/kunkoder/php-dasar/master/P1-Design/tabel_post.png)
 * Klik tab `desainer` dan relasikan antara kolom `id` pada tabel user dengan kolom `user_id` pada tabel post. Hasil relasi akan tampak seperti gambar berikut.
+  ![alt text](https://raw.githubusercontent.com/kunkoder/php-dasar/master/P1-Design/relasi_database.png)
 
-## :rainbow: Design Interface
+## :pushpin: Design Interface
 
 
 
