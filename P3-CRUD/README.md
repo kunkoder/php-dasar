@@ -41,19 +41,9 @@ Sebelum memulai, pastikan telah terinstall:
 		require  "config.php";
 		session_start();
 
-		// Memeriksa user logout atau belum login
-		if(!isset($_SESSION["login"])  ||  isset($_GET["logout"])) {
-			session_destroy();
-			echo"
-			<script>
-				document.location.href = 'login.php';
-			</script>";
-		}
 	?>
 	```
 	
-	* `session_start();` mengizinkan halaman mengakses variabel `$_SESSION` untuk pengecekan autentifikasi.
-	* `if(!isset($_SESSION["login"])  ||  isset($_GET["logout"]))` mencegah user yang belum login atau yang sudah logout untuk mengakses halaman.
-	* `session_destroy();` menghapus session.
+	* ``
 
 > Note: simpan folder pada directory `C:\xampp\htdocs` jika menggunakan XAMPP atau jalankan perintah `php -S localhost:8000` untuk menggunakan php server.
