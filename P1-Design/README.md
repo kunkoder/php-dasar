@@ -87,6 +87,8 @@ Sebelum memulai, pastikan telah terinstall beberapa tools:
     * admin.html
     * edit.html
 
+> Note: folder `examples`, `docs`, dan beberapa file yang tidak dibutuhkan dapat dihapus.
+
 ## :eyes: Preview
 
 **register.html**
