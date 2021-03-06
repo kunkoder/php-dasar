@@ -29,33 +29,77 @@ Sebelum memulai, pastikan telah terinstall beberapa tools:
 
 ## :pushpin: Design Interface
 
-
-
-## :open_file_folder: Struktur Folder Argon Design System
+**Struktur Template Argon Design System**
 
 ```text
 ├── assets
 │   └── ...
-├── admin.html
-├── edit.html
+├── docs
+│   └── ...
+├── examples
+│   └── ...
+├── CHANGELOG.md
+├── ISSUE_TEMPLATE.md
+├── LICENSE.md
+├── README.md
+├── bower.json
+├── composer.json
+├── gulpfile.js
 ├── index.html
-├── login.html
-├── profile.html
-└── register.html
+└── package.json
 ```
 
-## :open_file_folder: Struktur Folder Terkini
+* Buka file index.html dan edit tag `<head>` dan `<script>` sesuai kebutuhan.
 
-```text
-├── assets
-│   └── ...
-├── admin.html
-├── config.php
-├── edit.html
-├── index.php
-├── login.php
-├── profile.html
-└── register.php
-```
+    **index.html**
+    ```bash
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="apple-touch-icon" sizes="76x76" href="assets/img/apple-icon.png">
+        <link rel="icon" type="image/png" href="assets/img/favicon.png">
+        <title>
+            Home . Argon
+        </title>
 
-> Note: simpan folder pada directory `C:\xampp\htdocs` jika menggunakan XAMPP atau jalankan perintah `php -S localhost:8000` untuk menggunakan php server.
+        <!-- Nucleo Icons -->
+        <link href="assets/css/nucleo-icons.css" rel="stylesheet" />
+        <link href="assets/css/nucleo-svg.css" rel="stylesheet" />
+
+        <!-- CSS Files -->
+        <link href="assets/css/argon-design-system.css?v=1.2.2" rel="stylesheet" />
+    </head>
+
+    <!-- Skip -->
+
+	<script src="assets/js/core/jquery.min.js" type="text/javascript"></script>
+	<script src="assets/js/core/popper.min.js" type="text/javascript"></script>
+	<script src="assets/js/core/bootstrap.min.js" type="text/javascript"></script>
+	<script src="assets/js/argon-design-system.min.js?v=1.2.2" type="text/javascript"></script>
+    ```
+
+* Hapus isi dari tag `<body>` dan sesuaikan tampilan sesuai kebutuhan. Tampilan `index.html` akan tampak seperti berikut.
+  ![alt text](https://raw.githubusercontent.com/kunkoder/php-dasar/master/P1-Design/index.png)
+* Salin `index.html` dan buatlah halaman:
+    * register.html
+    * login.html
+    * profile.html
+    * admin.html
+    * edit.html
+
+## :eyes: Preview
+
+**register.html**
+![alt text](https://raw.githubusercontent.com/kunkoder/php-dasar/master/P1-Design/register.png)
+
+**login.html**
+![alt text](https://raw.githubusercontent.com/kunkoder/php-dasar/master/P1-Design/login.png)
+
+**profile.html**
+![alt text](https://raw.githubusercontent.com/kunkoder/php-dasar/master/P1-Design/profile.png)
+
+**admin.html**
+![alt text](https://raw.githubusercontent.com/kunkoder/php-dasar/master/P1-Design/admin.png)
+
+**edit.html**
+![alt text](https://raw.githubusercontent.com/kunkoder/php-dasar/master/P1-Design/edit.png)
