@@ -32,5 +32,3 @@ Sebelum memulai, pastikan telah terinstall beberapa tools:
 ## :balance_scale: Lisensi
 
 Aplikasi ini dibawah lisensi [MIT License](https://github.com/kunkoder/php-dasar/blob/main/LICENSE).
-
-cek 123
