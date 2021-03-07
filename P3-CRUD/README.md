@@ -21,6 +21,8 @@ Sebelum memulai, pastikan telah terinstall:
 ```text
 ├── assets
 │   └── ...
+├── images
+│   └── ...
 ├── README.md
 ├── admin.html
 ├── edit.html
@@ -32,6 +34,37 @@ Sebelum memulai, pastikan telah terinstall:
 ```
 
 ## :computer: Langkah Kerja
+
+* Ubah format file `admin.html` menjadi `.php`.
+* Tambahkan script di baris pertama file `admin.php`.
+
+	**admin.php**
+	```bash
+	<?php
+		require "config.php";
+		session_start();
+
+		// Memeriksa user logout atau belum login
+		if(!isset($_SESSION["login"]) || isset($_GET["logout"]) || !isset($_SESSION["admin"])) {
+			session_destroy();
+			echo"
+			<script>
+				document.location.href = 'login.php';
+			</script>";
+		}
+	?>
+
+	<!-- Skip -->
+
+	<li class="nav-item">
+		<a href="?logout" class="nav-link" role="button">
+			<i class="ni ni-user-run d-lg-none"></i>
+			<span class="nav-link-inner--text">Logout</span>
+		</a>
+	</li>
+	```
+
+	* `if(!isset($_SESSION["login"]) || isset($_GET["logout"]) || !isset($_SESSION["admin"]))`
 
 * Tambahkan script di file `index.php`.
 
@@ -132,38 +165,7 @@ Sebelum memulai, pastikan telah terinstall:
 	```
 
 	* `function findAll($query)`
-	* `array_push($rows, $row);`
 	* `while($row = mysqli_fetch_assoc($result))`
-
-* Ubah format file `admin.html` menjadi `.php`.
-* Tambahkan script di baris pertama file `admin.php`.
-
-	**admin.php**
-	```bash
-	<?php
-		require "config.php";
-		session_start();
-
-		// Memeriksa user logout atau belum login
-		if(!isset($_SESSION["login"]) || isset($_GET["logout"]) || !isset($_SESSION["admin"])) {
-			session_destroy();
-			echo"
-			<script>
-				document.location.href = 'login.php';
-			</script>";
-		}
-	?>
-
-	<!-- Skip -->
-
-	<li class="nav-item">
-		<a href="?logout" class="nav-link" role="button">
-			<i class="ni ni-user-run d-lg-none"></i>
-			<span class="nav-link-inner--text">Logout</span>
-		</a>
-	</li>
-	```
-
-	* `if(!isset($_SESSION["login"]) || isset($_GET["logout"]) || !isset($_SESSION["admin"]))`
+	* `array_push($rows, $row);`
 
 > Note: simpan folder pada directory `C:\xampp\htdocs` jika menggunakan XAMPP atau jalankan perintah `php -S localhost:8000` untuk menggunakan php server.
