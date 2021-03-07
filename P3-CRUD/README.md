@@ -1,7 +1,7 @@
 
 # :memo: CRUD
 
-Folder ini berisi penerapan create dan read data pada bahasa pemrograman PHP. Materi yang dibahas meliputi:
+Folder ini berisi penerapan create dan read data dengan bahasa pemrograman PHP. Materi yang dibahas meliputi:
 * Menambah data
 * Menampilkan data
 * Relasi antar tabel
@@ -113,5 +113,57 @@ Sebelum memulai, pastikan telah terinstall:
 	* `<?php foreach($posts as $post) : ?>`
 	* `<?php if($post["avatar"] != null) : ?>`
 
+* Tambahkan script di file `config.php`.
+
+	**config.php**
+	```bash
+	// Skip
+
+	// Mengambil lebih dari 1 baris data
+	function findAll($query) {
+		global $conn;
+		$result = mysqli_query($conn, $query);
+		$rows = [];
+		while($row = mysqli_fetch_assoc($result)) {
+			array_push($rows, $row);
+		}
+		return $rows; // Mengembalikan array 2 dimensi
+	}
+	```
+
+	* `function findAll($query)`
+	* `array_push($rows, $row);`
+	* `while($row = mysqli_fetch_assoc($result))`
+
+* Ubah format file `admin.html` menjadi `.php`.
+* Tambahkan script di baris pertama file `admin.php`.
+
+	**admin.php**
+	```bash
+	<?php
+		require "config.php";
+		session_start();
+
+		// Memeriksa user logout atau belum login
+		if(!isset($_SESSION["login"]) || isset($_GET["logout"]) || !isset($_SESSION["admin"])) {
+			session_destroy();
+			echo"
+			<script>
+				document.location.href = 'login.php';
+			</script>";
+		}
+	?>
+
+	<!-- Skip -->
+
+	<li class="nav-item">
+		<a href="?logout" class="nav-link" role="button">
+			<i class="ni ni-user-run d-lg-none"></i>
+			<span class="nav-link-inner--text">Logout</span>
+		</a>
+	</li>
+	```
+
+	* `if(!isset($_SESSION["login"]) || isset($_GET["logout"]) || !isset($_SESSION["admin"]))`
 
 > Note: simpan folder pada directory `C:\xampp\htdocs` jika menggunakan XAMPP atau jalankan perintah `php -S localhost:8000` untuk menggunakan php server.
