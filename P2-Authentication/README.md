@@ -33,7 +33,7 @@ Sebelum memulai, pastikan telah terinstall:
 └── sosmed.sql
 ```
 
-> Note: folder `images`, dan file `sosmed.sql` dapat dihapus.
+> Note: folder `images` dan file `sosmed.sql` dapat dihapus.
 
 ## :computer: Langkah Kerja
 
