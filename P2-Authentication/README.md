@@ -75,7 +75,7 @@ Sebelum memulai, pastikan telah terinstall:
 	* `function findOne($query)` adalah fungsi dengan nilai balik berupa array asosiatif 1 dimensi, fungsi ini juga membutuhkan parameter `$query` yang berisi query MySQL. 
  
 * Ubah format file `register.html`, `login.html`, `index.html` menjadi `.php`.
-* Tambahkan script di baris pertama file `register.php`.
+* Tambahkan script di baris pertama file `register.php`, jangan lupa ubah tombol `<a href="login.html">` menjadi `<a href="login.php">`.
 
 	**register.php**
 	```bash
@@ -117,6 +117,16 @@ Sebelum memulai, pastikan telah terinstall:
 			}
 		}
 	?>
+
+	<!-- Skip -->
+
+	<div class="text-center">
+        <button type="submit" class="btn btn-primary mt-4" name="register">Buat
+            Akun</button>
+    </div>
+    <div class="text-center">
+        <a class="nav-link mt-3" href="login.html">Sudah punya akun?</a>
+    </div>
 	```
 	
 	* `if(isset($_POST["register"]))` memeriksa method post yang dikirimkan ke halaman ini dari `<button type="submit" name="register">` yang ada di akhir form. 
@@ -125,7 +135,7 @@ Sebelum memulai, pastikan telah terinstall:
 	* `$user  =  findOne("SELECT  *  FROM user WHERE username = '$username'");` mengambil 1 baris data dari tabel user dengan kriteria `username = '$username'`.
 	* `$create_user  =  commit("INSERT  INTO user SET  role  = 'member', username = '$username', email = '$email', password  = '$password'");` menambahkan 1 baris data ke tabel user dan mengembalikan nilai > 0 jika berhasil dan < 0 jika gagal.
 
-* Tambahkan script di baris pertama file `login.php`.
+* Tambahkan script di baris pertama file `login.php`, jangan lupa ubah tombol `<a href="register.html">` menjadi `<a href="register.php">`.
 
 	**login.php**
 	```bash
@@ -188,7 +198,7 @@ Sebelum memulai, pastikan telah terinstall:
 	* `if($user["role"] ==  "admin")` memeriksa kolom role pada tabel user, jika role admin maka akan login ke halaman admin.
 	* `$_SESSION["admin"] =  true;` membuat session dengan nama admin yang bernilai true agar user biasa tidak bisa mengakses halaman admin.
 
-* Tambahkan script di baris pertama file `index.php`.
+* Tambahkan script di baris pertama file `index.php`, jangan lupa ubah tombol `<a href="###">` menjadi `<a href="?logout">`.
 
 	**index.php**
 	```bash
