@@ -33,6 +33,8 @@ Sebelum memulai, pastikan telah terinstall:
 └── sosmed.sql
 ```
 
+> Note: folder `images`, dan beberapa file `sosmed.sql` dihapus.
+
 ## :computer: Langkah Kerja
 
 * Buat file `config.php` yang nanti berisi pengaturan database dan beberapa fungsi yang dapat diakses oleh file lainnya.
