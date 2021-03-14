@@ -125,7 +125,7 @@ Sebelum memulai, pastikan telah terinstall:
             Akun</button>
     </div>
     <div class="text-center">
-        <a class="nav-link mt-3" href="login.html">Sudah punya akun?</a>
+        <a class="nav-link mt-3" href="login.php">Sudah punya akun?</a>
     </div>
 	```
 	
@@ -134,6 +134,7 @@ Sebelum memulai, pastikan telah terinstall:
 	* `$password  =  password_hash($_POST["password"], PASSWORD_DEFAULT);` menggunakan algoritma bcrypt secara default untuk mengenkripsi password.
 	* `$user  =  findOne("SELECT  *  FROM user WHERE username = '$username'");` mengambil 1 baris data dari tabel user dengan kriteria `username = '$username'`.
 	* `$create_user  =  commit("INSERT  INTO user SET  role  = 'member', username = '$username', email = '$email', password  = '$password'");` menambahkan 1 baris data ke tabel user dan mengembalikan nilai > 0 jika berhasil dan < 0 jika gagal.
+	* `<a href="login.php">` pindah ke halaman `login.php`.
 
 * Tambahkan script di baris pertama file `login.php`, jangan lupa ubah tombol `<a href="register.html">` menjadi `<a href="register.php">`.
 
@@ -189,6 +190,16 @@ Sebelum memulai, pastikan telah terinstall:
 			}
 		}
 	?>
+
+	<!-- Skip -->
+
+	<div class="text-center">
+        <button type="submit" class="btn btn-primary mt-4"
+            name="login">Masuk</button>
+    </div>
+    <div class="text-center">
+        <a class="nav-link mt-3" href="register.php">Belum punya akun?</a>
+    </div>
 	```
 	
 	* `session_start();` mengizinkan halaman mengakses variabel `$_SESSION` untuk pengecekan autentifikasi.
@@ -197,6 +208,7 @@ Sebelum memulai, pastikan telah terinstall:
 	* `$_SESSION["login"] =  $user["id"];` membuat session dengan nama login yang berisi id user.
 	* `if($user["role"] ==  "admin")` memeriksa kolom role pada tabel user, jika role admin maka akan login ke halaman admin.
 	* `$_SESSION["admin"] =  true;` membuat session dengan nama admin yang bernilai true agar user biasa tidak bisa mengakses halaman admin.
+	* `<a href="register.php">` pindah ke halaman `register.php`.
 
 * Tambahkan script di baris pertama file `index.php`, jangan lupa ubah tombol `<a href="###">` menjadi `<a href="?logout">`.
 
@@ -227,7 +239,7 @@ Sebelum memulai, pastikan telah terinstall:
 	```
 	
 	* `session_start();` mengizinkan halaman mengakses variabel `$_SESSION` untuk pengecekan autentifikasi.
-	* `if(!isset($_SESSION["login"])  ||  isset($_GET["logout"]))` mencegah user yang belum login atau yang sudah logout untuk mengakses halaman.
+	* `if(!isset($_SESSION["login"])  ||  isset($_GET["logout"]))` memeriksa apakah ada session yang tersimpan atau method get dengan nama `logout` yang terkirim ke halaman ini untuk mencegah user yang belum login atau yang sudah logout untuk mengakses halaman. User akan otomatis terlempar ke halaman login.
 	* `session_destroy();` menghapus session.
 	* `<a href="?logout">` mengirimkan method get dengan nama `logout` ke halaman ini.
 
