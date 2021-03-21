@@ -1,11 +1,11 @@
 <?php
- 	require  "config.php";
+ 	require "config.php";
  	session_start();
 
  	// Memeriksa user logout atau belum login
- 	if(!isset($_SESSION["login"])  ||  isset($_GET["logout"])) {
+ 	if(!isset($_SESSION["login"]) || isset($_GET["logout"])) {
  		session_destroy();
- 		echo"
+ 		echo"  
  		<script>
  			document.location.href = 'login.php';
  		</script>";

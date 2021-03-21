@@ -48,26 +48,26 @@ Sebelum memulai, pastikan telah terinstall:
 
 	// Memeriksa apakah database terhubung
 	if(!$conn) {
-	    echo"
-	    <script>
-	        alert('Database tidak terhubung');
-	    </script>";
+		echo"
+		<script>
+			alert('Database tidak terhubung');
+		</script>";
 	}
 
 	// Memeriksa apakah query berhasil, bernilai > 0 jika berhasil dan < 0 jika gagal
 	function commit($query) {
-	    global $conn;
-	    $result = mysqli_query($conn, $query);
-	    $affected = mysqli_affected_rows($conn);
-	    return $affected; // Mengembalikan nilai > 0 atau < 0
+		global $conn;
+		$result = mysqli_query($conn, $query);
+		$affected = mysqli_affected_rows($conn);
+		return $affected; // Mengembalikan nilai > 0 atau < 0
 	}
 
 	// Mengambil 1 baris data
 	function findOne($query) {
-	    global $conn;
-	    $result = mysqli_query($conn, $query);
-	    $row = mysqli_fetch_assoc($result);
-	    return $row; // Mengembalikan array 1 dimensi
+		global $conn;
+		$result = mysqli_query($conn, $query);
+		$row = mysqli_fetch_assoc($result);
+		return $row; // Mengembalikan array 1 dimensi
 	}
 	```
 	
@@ -82,18 +82,18 @@ Sebelum memulai, pastikan telah terinstall:
 	**register.php**
 	```bash
 	<?php
-		require  "config.php";
+		require "config.php";
 
 		// Memeriksa method post yang dikirim ke halaman ini
 		if(isset($_POST["register"])) {
-			$username  =  $_POST["username"];
-			$email  =  $_POST["email"];
+			$username = $_POST["username"];
+			$email = $_POST["email"];
 
 			// Enkripsi password
-			$password  =  password_hash($_POST["password"], PASSWORD_DEFAULT);
+			$password = password_hash($_POST["password"], PASSWORD_DEFAULT);
 
-			$user  =  findOne("SELECT  *  FROM user WHERE username = '$username'");
-			if($user  !=  null) {
+			$user = findOne("SELECT * FROM user WHERE username = '$username'");
+			if($user != null) {
 				echo"
 				<script>
 					alert('Username telah terdaftar, pilih username lain');
@@ -101,8 +101,8 @@ Sebelum memulai, pastikan telah terinstall:
 				</script>";
 			}
 			else {
-				$create_user  =  commit("INSERT  INTO user SET  role  = 'member', username = '$username', email = '$email', password  = '$password'");
-				if($create_user  >  0) {
+				$create_user = commit("INSERT INTO user SET role = 'member', username = '$username', email = '$email', password = '$password'");
+				if($create_user > 0) {
 					echo"
 					<script>
 						alert('Register berhasil');
@@ -143,26 +143,26 @@ Sebelum memulai, pastikan telah terinstall:
 	**login.php**
 	```bash
 	<?php
-		require  "config.php";
+		require "config.php";
 		session_start();
 
 		// Memeriksa method post yang dikirim ke halaman ini
 		if(isset($_POST["login"])) {
-			$username  =  $_POST["username"];
-			$password  =  $_POST["password"];
+			$username = $_POST["username"];
+			$password = $_POST["password"];
 
-			$user  =  findOne("SELECT  *  FROM user WHERE username = '$username'");
-			if($user  !=  null) {
+			$user = findOne("SELECT * FROM user WHERE username = '$username'");
+			if($user != null) {
 
 				// Memeriksa apakah password benar
 				if(password_verify($password, $user["password"])) {
 
 					// Membuat session login berupa id user
-					$_SESSION["login"] =  $user["id"];
+					$_SESSION["login"] = $user["id"];
 
 					// Login ke halaman admin
-					if($user["role"] ==  "admin") {
-						$_SESSION["admin"] =  true;
+					if($user["role"] == "admin") {
+						$_SESSION["admin"] = true;
 						echo"
 						<script>
 							document.location.href = 'admin.php';
@@ -217,13 +217,13 @@ Sebelum memulai, pastikan telah terinstall:
 	**index.php**
 	```bash
 	<?php
-		require  "config.php";
+		require "config.php";
 		session_start();
 
 		// Memeriksa user logout atau belum login
-		if(!isset($_SESSION["login"])  ||  isset($_GET["logout"])) {
+		if(!isset($_SESSION["login"]) || isset($_GET["logout"])) {
 			session_destroy();
-			echo"
+			echo"  
 			<script>
 				document.location.href = 'login.php';
 			</script>";

@@ -1,16 +1,16 @@
 <?php
- 	require  "config.php";
+ 	require "config.php";
 
  	// Memeriksa method post yang dikirim ke halaman ini
  	if(isset($_POST["register"])) {
- 		$username  =  $_POST["username"];
- 		$email  =  $_POST["email"];
+ 		$username = $_POST["username"];
+ 		$email = $_POST["email"];
 
  		// Enkripsi password
- 		$password  =  password_hash($_POST["password"], PASSWORD_DEFAULT);
+ 		$password = password_hash($_POST["password"], PASSWORD_DEFAULT);
 
- 		$user  =  findOne("SELECT  *  FROM user WHERE username = '$username'");
- 		if($user  !=  null) {
+ 		$user = findOne("SELECT * FROM user WHERE username = '$username'");
+ 		if($user != null) {
  			echo"
  			<script>
  				alert('Username telah terdaftar, pilih username lain');
@@ -18,8 +18,8 @@
  			</script>";
  		}
  		else {
- 			$create_user  =  commit("INSERT  INTO user SET  role  = 'member', username = '$username', email = '$email', password  = '$password'");
- 			if($create_user  >  0) {
+ 			$create_user = commit("INSERT INTO user SET role = 'member', username = '$username', email = '$email', password = '$password'");
+ 			if($create_user > 0) {
  				echo"
  				<script>
  					alert('Register berhasil');

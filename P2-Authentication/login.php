@@ -1,24 +1,24 @@
 <?php
- 	require  "config.php";
+ 	require "config.php";
  	session_start();
 
  	// Memeriksa method post yang dikirim ke halaman ini
  	if(isset($_POST["login"])) {
- 		$username  =  $_POST["username"];
- 		$password  =  $_POST["password"];
+ 		$username = $_POST["username"];
+ 		$password = $_POST["password"];
 
- 		$user  =  findOne("SELECT  *  FROM user WHERE username = '$username'");
- 		if($user  !=  null) {
+ 		$user = findOne("SELECT * FROM user WHERE username = '$username'");
+ 		if($user != null) {
 
  			// Memeriksa apakah password benar
  			if(password_verify($password, $user["password"])) {
 
  				// Membuat session login berupa id user
- 				$_SESSION["login"] =  $user["id"];
+ 				$_SESSION["login"] = $user["id"];
 
  				// Login ke halaman admin
- 				if($user["role"] ==  "admin") {
- 					$_SESSION["admin"] =  true;
+ 				if($user["role"] == "admin") {
+ 					$_SESSION["admin"] = true;
  					echo"
  					<script>
  						document.location.href = 'admin.php';
