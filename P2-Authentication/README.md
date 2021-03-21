@@ -210,7 +210,7 @@ Sebelum memulai, pastikan telah terinstall:
 	* `$_SESSION["admin"] =  true;` membuat session dengan nama admin yang bernilai true agar user biasa tidak bisa mengakses halaman admin.
 	* `<a href="register.php">` pindah ke halaman `register.php`.
 
-* Tambahkan script di baris pertama file `index.php`, jangan lupa ubah tombol `<a href="###">` menjadi `<a href="?logout">`.
+* Tambahkan script di baris pertama file `index.php`, jangan lupa ubah tombol `<a href="###">` menjadi `<a href="?logout">` dan `<a href="index.html">` menjadi `<a href="index.php">`.
 
 	**index.php**
 	```bash

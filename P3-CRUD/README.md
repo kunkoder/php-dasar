@@ -28,7 +28,6 @@ Sebelum memulai, pastikan telah terinstall:
 ├── login.php
 ├── profile.html
 ├── register.php
-└── sosmed.sql
 ```
 
 ## :computer: Langkah Kerja
@@ -59,7 +58,7 @@ Sebelum memulai, pastikan telah terinstall:
 * Buat akun user baru dan ubah role nya menjadi admin secara manual lewat phpmyadmin.
 ![alt text](https://raw.githubusercontent.com/kunkoder/php-dasar/master/images/ubah_role.png)
 
-* Tambahkan script di baris pertama file `admin.php`.
+* Tambahkan script di baris pertama file `admin.php`, jangan lupa ubah tombol `<a href="###">` menjadi `<a href="?logout">`.
 
 	**admin.php**
 	```bash
@@ -87,7 +86,9 @@ Sebelum memulai, pastikan telah terinstall:
 	</li>
 	```
 
-	* `if(!isset($_SESSION["login"]) || isset($_GET["logout"]) || !isset($_SESSION["admin"]))` memeriksa apakah ada session yang tersimpan atau method get dengan nama `logout` yang terkirim ke halaman ini untuk mencegah user yang belum login atau yang sudah logout untuk mengakses halaman. User akan otomatis terlempar ke halaman login. Script ini juga mencegah user yang rolenya bukan admin untuk mengakses halaman. 
+	* `if(!isset($_SESSION["login"]) || isset($_GET["logout"]) || !isset($_SESSION["admin"]))` memeriksa apakah ada session yang tersimpan atau method get dengan nama `logout` yang terkirim ke halaman ini untuk mencegah user yang belum login atau yang sudah logout untuk mengakses halaman. User akan otomatis terlempar ke halaman login. Script ini juga mencegah user yang rolenya bukan admin untuk mengakses halaman.
+	* `session_destroy();` menghapus session.
+	* `<a href="?logout">` mengirimkan method get dengan nama `logout` ke halaman ini.
 
 * Tambahkan script di file `index.php`.
 
@@ -168,5 +169,11 @@ Sebelum memulai, pastikan telah terinstall:
 	* `$create_post = commit("INSERT INTO post SET user_id='$user_id', content='$content', created_at='$created_at'");` menambahkan 1 baris data ke tabel post dan mengembalikan nilai > 0 jika berhasil dan < 0 jika gagal.
 	* `<?php foreach($posts as $post) : ?>` perulangan yang menguraikan variabel `$posts` yang berupa array asosiatif 2 dimensi sehingga tiap baris dapat diakses melalui variabel `$post`.
 	* `<?php if($post["avatar"] != null) : ?>` jika user belum mempunyai foto profile, maka akan menampilkan foto profile default.
+	* `<img src="avatar/<?= $post["avatar"]; ?>" alt="Rounded image" class="img-fluid rounded shadow" width="120">` mengambil data dari table user kolom `avatar`.
+	* `<?php endif; ?>` mengakhiri `if`.
+	* `<?= $post["username"]; ?>` mengambil data dari table post kolom `username`.
+	* `<small class="text-muted"><?= $post["created_at"]; ?></small>` mengambil data dari table post kolom `created_at`.
+	* `<p><?= $post["content"]; ?></p>` mengambil data dari table post kolom `content`.
+	* `<?php endforeach; ?>` mengakhiri perulangan.
 
 > Note: simpan folder pada directory `C:\xampp\htdocs` jika menggunakan XAMPP atau jalankan perintah `php -S localhost:8000` untuk menggunakan php server.

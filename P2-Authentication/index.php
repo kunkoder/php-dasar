@@ -65,7 +65,7 @@
 				</div>
 				<ul class="navbar-nav navbar-nav-hover align-items-lg-center">
 					<li class="nav-item">
-						<a href="index.html" class="nav-link" role="button">
+						<a href="index.php" class="nav-link" role="button">
 							<i class="ni ni-collection d-lg-none"></i>
 							<span class="nav-link-inner--text">Home</span>
 						</a>
