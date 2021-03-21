@@ -162,7 +162,7 @@ Sebelum memulai, pastikan telah terinstall:
 	* `date_default_timezone_set("Asia/Jakarta");` mengatur penanggalan ke waktu Kota Jakarta atau GMT +7.
 	* `$user_id = $_SESSION["login"];` mengambil data session dengan nama login yang berisi id user.
 	* `$user = findOne("SELECT * FROM user WHERE id = '$user_id'");` mengambil 1 baris data dari tabel user dengan kriteria `id = '$user_id'`.
-	* `$posts = findAll("SELECT u.*, p.* FROM post p INNER JOIN user u WHERE p.user_id=u.id ORDER BY created_at DESC");` mengambil lebih dari 1 baris data dari relasi tabel user dan post dengan kriteria `id' yang di tabel user sama dengan `user_id` yang di tabel post`.
+	* `$posts = findAll("SELECT u.*, p.* FROM post p INNER JOIN user u WHERE p.user_id=u.id ORDER BY created_at DESC");` mengambil lebih dari 1 baris data dari relasi tabel user dan post dengan kriteria `id` yang di tabel user sama dengan `user_id` yang di tabel post`.
 	* `if(isset($_POST["post"]))` memeriksa method post yang dikirimkan ke halaman ini dari `<button type="submit" name="post">` yang ada di akhir form.
 	* `$created_at = date("Y-m-d H:i:s");` mengambil data waktu terkini dengan format `tahun-bulan-tanggal jam:menit:detik` agar bisa dimasukan ke kolom `created_at` dengan tipe datetime di tabel post.
 	* `$create_post = commit("INSERT INTO post SET user_id='$user_id', content='$content', created_at='$created_at'");` menambahkan 1 baris data ke tabel post dan mengembalikan nilai > 0 jika berhasil dan < 0 jika gagal.
