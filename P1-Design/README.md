@@ -21,11 +21,11 @@ Sebelum memulai, pastikan telah terinstall beberapa tools:
 
 * Buat database di MySQL dengan nama `sosmed`.
 * Buat tabel `user` di dalam database sosmed seperti gambar berikut.
-  ![alt text](https://raw.githubusercontent.com/kunkoder/php-dasar/master/P1-Design/images/tabel_user.png)
+  ![alt text](https://raw.githubusercontent.com/kunkoder/php-dasar/master/images/tabel_user.png)
 * Buat tabel `post` di dalam database sosmed seperti gambar berikut.
-  ![alt text](https://raw.githubusercontent.com/kunkoder/php-dasar/master/P1-Design/images/tabel_post.png)
+  ![alt text](https://raw.githubusercontent.com/kunkoder/php-dasar/master/images/tabel_post.png)
 * Klik tab `desainer` dan relasikan antara kolom `id` pada tabel user dengan kolom `user_id` pada tabel post. Hasil relasi akan tampak seperti gambar berikut.
-  ![alt text](https://raw.githubusercontent.com/kunkoder/php-dasar/master/P1-Design/images/relasi_database.png)
+  ![alt text](https://raw.githubusercontent.com/kunkoder/php-dasar/master/images/relasi_database.png)
 
 ## :pushpin: Design Interface
 
@@ -79,7 +79,7 @@ Sebelum memulai, pastikan telah terinstall beberapa tools:
     ```
 
 * Hapus isi dari tag `<body>` dan sesuaikan tampilan sesuai kebutuhan. Tampilan `index.html` akan tampak seperti berikut.
-  ![alt text](https://raw.githubusercontent.com/kunkoder/php-dasar/master/P1-Design/images/index.png)
+  ![alt text](https://raw.githubusercontent.com/kunkoder/php-dasar/master/images/index.png)
 * Salin `index.html` dan buatlah halaman:
     * register.html
     * login.html
@@ -92,16 +92,16 @@ Sebelum memulai, pastikan telah terinstall beberapa tools:
 ## :eyes: Preview
 
 **register.html**
-![alt text](https://raw.githubusercontent.com/kunkoder/php-dasar/master/P1-Design/images/register.png)
+![alt text](https://raw.githubusercontent.com/kunkoder/php-dasar/master/images/register.png)
 
 **login.html**
-![alt text](https://raw.githubusercontent.com/kunkoder/php-dasar/master/P1-Design/images/login.png)
+![alt text](https://raw.githubusercontent.com/kunkoder/php-dasar/master/images/login.png)
 
 **profile.html**
-![alt text](https://raw.githubusercontent.com/kunkoder/php-dasar/master/P1-Design/images/profile.png)
+![alt text](https://raw.githubusercontent.com/kunkoder/php-dasar/master/images/profile.png)
 
 **admin.html**
-![alt text](https://raw.githubusercontent.com/kunkoder/php-dasar/master/P1-Design/images/admin.png)
+![alt text](https://raw.githubusercontent.com/kunkoder/php-dasar/master/images/admin.png)
 
 **edit.html**
-![alt text](https://raw.githubusercontent.com/kunkoder/php-dasar/master/P1-Design/images/edit.png)
+![alt text](https://raw.githubusercontent.com/kunkoder/php-dasar/master/images/edit.png)

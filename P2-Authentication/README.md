@@ -21,8 +21,6 @@ Sebelum memulai, pastikan telah terinstall:
 ```text
 ├── assets
 │   └── ...
-├── images
-│   └── ...
 ├── README.md
 ├── admin.html
 ├── edit.html
@@ -33,7 +31,7 @@ Sebelum memulai, pastikan telah terinstall:
 └── sosmed.sql
 ```
 
-> Note: folder `images` dan file `sosmed.sql` dapat dihapus.
+> Note: file `sosmed.sql` dapat dihapus.
 
 ## :computer: Langkah Kerja
 
