@@ -109,13 +109,13 @@ Sebelum memulai, pastikan telah terinstall:
 
 	* `if(!isset($_SESSION["login"])  ||  isset($_GET["logout"]))` memeriksa apakah ada session yang tersimpan atau method get dengan nama `logout` yang terkirim ke halaman ini untuk mencegah user yang belum login atau yang sudah logout untuk mengakses halaman. User akan otomatis terlempar ke halaman login.
 	* `session_destroy();` menghapus session.
-    * `$user = findOne("SELECT * FROM user WHERE id = '$user_id'");`
-    * `$posts = findAll("SELECT * FROM post WHERE user_id='$user_id' ORDER BY created_at DESC");`
-    * `if(isset($_POST["update"]))`
-    * `$update_user = commit("UPDATE user SET username = '$username', email = '$email' WHERE id = '$user_id'");`
-    * `if(isset($_GET["delete"])) `
-    * `$post_id = $_GET["delete"];`
-    * `$delete_post = commit("DELETE FROM post WHERE id='$post_id'");`
+    * `$user = findOne("SELECT * FROM user WHERE id = '$user_id'");` mengambil 1 baris data dari tabel user dengan kriteria `id = '$user_id'`.
+    * `$posts = findAll("SELECT * FROM post WHERE user_id='$user_id' ORDER BY created_at DESC");` mengambil lebih dari 1 baris data dari relasi tabel user dan post dengan kriteria `user_id` yang di tabel post` sama dengan id session yang login.
+    * `if(isset($_POST["update"]))` memeriksa method post yang dikirimkan ke halaman ini dari `<button type="submit" name="update">` yang ada di akhir form.
+    * `$update_user = commit("UPDATE user SET username = '$username', email = '$email' WHERE id = '$user_id'");` mengubah 1 baris data ke tabel user dan mengembalikan nilai > 0 jika berhasil dan < 0 jika gagal.
+    * `if(isset($_GET["delete"])) ` memeriksa method get yang dikirimkan ke halaman ini dengan nama `delete`.
+    * `$post_id = $_GET["delete"];` mengambil nilai dari method get dengan nama `delete` yaitu berupa `id` post yang akan dihapus.
+    * `$delete_post = commit("DELETE FROM post WHERE id='$post_id'");` menghapus 1 baris data ke tabel post dan mengembalikan nilai > 0 jika berhasil dan < 0 jika gagal.
     * `<a href="?logout">` mengirimkan method get dengan nama `logout` ke halaman ini.
 
 * Tambahkan script di file `profile.php`. Perhatikan tag HTML-nya, jangan sampai salah meletakan. 
@@ -179,14 +179,10 @@ Sebelum memulai, pastikan telah terinstall:
 
     * `<?php if($post["avatar"] != null) : ?>` jika user belum mempunyai foto profile, maka akan menampilkan foto profile default.
 	* `<img src="avatar/<?= $user["avatar"]; ?>" class="rounded-circle" width="170" height="170">` mengambil data dari table user kolom `avatar`.
-    * `<h3><?= $user["username"]; ?></h3>`
-    * `<div class="h6 font-weight-300"><?= $user["email"]; ?></div>`
-    * `<input value="<?= $user["id"]; ?>" type="hidden" name="id">`
-    * `<input value="" type="hidden" name="old_avatar">`
-    * `<input class="form-control" value="<?= $user["username"]; ?>" type="text" name="username">`
-    * `<input class="form-control" value="<?= $user["email"]; ?>" type="email" name="email">`
-
-> Note: script ini mempunyai kelemahan fatal, user dapat mengubah username tanpa pengecekan terlebih dahulu apakah username sudah ada yang punya.
+    * `<h3><?= $user["username"]; ?></h3>` mengambil data dari table user kolom `username`.
+    * `<div class="h6 font-weight-300"><?= $user["email"]; ?></div>` mengambil data dari table user kolom `email`.
+    * `<input value="<?= $user["id"]; ?>" type="hidden" name="id">` mengambil data dari table user kolom `id`. Digunakan `type="hidden"` agar form input tidak ditampilkan pada halaman tetapi datanya tetap bisa didapatlan.
+    * `<input value="" type="hidden" name="old_avatar">` mengambil data dari table user kolom `avatar`. form input ini berisi nama file foto profile yang lama.
 
 * Tambahkan script di file `profile.php`. Perhatikan tag HTML-nya, jangan sampai salah meletakan. 
 
@@ -226,13 +222,13 @@ Sebelum memulai, pastikan telah terinstall:
     </div>
     ```
 
-    * `<?php foreach($posts as $post) : ?>`
+    * `<?php foreach($posts as $post) : ?>` perulangan yang menguraikan variabel `$posts` yang berupa array asosiatif 2 dimensi sehingga tiap baris dapat diakses melalui variabel `$post`.
     * `<?php if($post["avatar"] != null) : ?>` jika user belum mempunyai foto profile, maka akan menampilkan foto profile default.
 	* `<img src="avatar/<?= $post["avatar"]; ?>" alt="Rounded image" class="img-fluid rounded shadow" width="120">` mengambil data dari table user kolom `avatar`.
     * `<?php endif; ?>` mengakhiri `if`.
     * `<?= $post["username"]; ?>` mengambil data dari table post kolom `username`.
 	* `<small class="text-muted"><?= $post["created_at"]; ?></small>` mengambil data dari table post kolom `created_at`.
-    * `<span><a class="btn btn-danger btn-sm" href="?delete=<?= $post['id']; ?>">Hapus</a></span>`
+    * `<span><a class="btn btn-danger btn-sm" href="?delete=<?= $post['id']; ?>">Hapus</a></span>` mengirimkan method get dengan nama `delete` dengan nilai `id` postingan yang akan dihapus ke halaman ini.
 	* `<p><?= $post["content"]; ?></p>` mengambil data dari table post kolom `content`.
 	* `<?php endforeach; ?>` mengakhiri perulangan.
 
