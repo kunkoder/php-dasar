@@ -60,16 +60,15 @@ Sebelum memulai, pastikan telah terinstall:
             $user_id = $_POST["id"];
             $username = $_POST["username"];
             $email = $_POST["email"];
-            if($username != $user["username"]) {
-                $exist = findOne("SELECT * FROM user WHERE username = '$username'");
-                if($exist != null) {
-                    echo"
-                    <script>
-                        alert('Username telah terdaftar, pilih username lain');
-                        document.location.href = 'profile.php';
-                    </script>";
-                    exit(); // Membatalkan script selanjutnya
-                }
+
+            $exist = findOne("SELECT * FROM user WHERE username = '$username'");
+            if($username != $user["username"] && $exist != null) {
+                echo"
+                <script>
+                    alert('Username telah terdaftar, pilih username lain');
+                    document.location.href = 'profile.php';
+                </script>";
+                exit(); // Membatalkan script selanjutnya
             }
             $update_user = commit("UPDATE user SET username = '$username', email = '$email' WHERE id = '$user_id'");
             if($update_user > 0) {
