@@ -60,7 +60,17 @@ Sebelum memulai, pastikan telah terinstall:
             $user_id = $_POST["id"];
             $username = $_POST["username"];
             $email = $_POST["email"];
-            
+            if($username != $user["username"]) {
+                $exist = findOne("SELECT * FROM user WHERE username = '$username'");
+                if($exist != null) {
+                    echo"
+                    <script>
+                        alert('Username telah terdaftar, pilih username lain');
+                        document.location.href = 'profile.php';
+                    </script>";
+                    exit(); // Membatalkan script selanjutnya
+                }
+            }
             $update_user = commit("UPDATE user SET username = '$username', email = '$email' WHERE id = '$user_id'");
             if($update_user > 0) {
                 echo"
@@ -113,6 +123,7 @@ Sebelum memulai, pastikan telah terinstall:
     * `$posts = findAll("SELECT * FROM post WHERE user_id='$user_id' ORDER BY created_at DESC");` mengambil lebih dari 1 baris data dari relasi tabel user dan post dengan kriteria `user_id` yang di tabel post` sama dengan id session yang login.
     * `if(isset($_POST["update"]))` memeriksa method post yang dikirimkan ke halaman ini dari `<button type="submit" name="update">` yang ada di akhir form.
     * `$update_user = commit("UPDATE user SET username = '$username', email = '$email' WHERE id = '$user_id'");` mengubah 1 baris data ke tabel user dan mengembalikan nilai > 0 jika berhasil dan < 0 jika gagal.
+    * `exit();` Membatalkan script selanjutnya.
     * `if(isset($_GET["delete"])) ` memeriksa method get yang dikirimkan ke halaman ini dengan nama `delete`.
     * `$post_id = $_GET["delete"];` mengambil nilai dari method get dengan nama `delete` yaitu berupa `id` post yang akan dihapus.
     * `$delete_post = commit("DELETE FROM post WHERE id='$post_id'");` menghapus 1 baris data ke tabel post dan mengembalikan nilai > 0 jika berhasil dan < 0 jika gagal.
