@@ -68,22 +68,23 @@ Sebelum memulai, pastikan telah terinstall:
                     alert('Username telah terdaftar, pilih username lain');
                     document.location.href = 'profile.php';
                 </script>";
-                exit(); // Membatalkan script selanjutnya
-            }
-            $update_user = commit("UPDATE user SET username = '$username', email = '$email' WHERE id = '$user_id'");
-            if($update_user > 0) {
-                echo"
-                <script>
-                    alert('Profile berhasil diubah');
-                    document.location.href = 'profile.php';
-                </script>";
             }
             else {
-                echo"
-                <script>
-                    alert('Profile gagal diubah');
-                    document.location.href = 'profile.php';
-                </script>";
+                $update_user = commit("UPDATE user SET username = '$username', email = '$email' WHERE id = '$user_id'");
+                if($update_user > 0) {
+                    echo"
+                    <script>
+                        alert('Profile berhasil diubah');
+                        document.location.href = 'profile.php';
+                    </script>";
+                }
+                else {
+                    echo"
+                    <script>
+                        alert('Profile gagal diubah');
+                        document.location.href = 'profile.php';
+                    </script>";
+                }
             }
         }
 
