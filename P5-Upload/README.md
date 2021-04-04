@@ -134,6 +134,7 @@ Sebelum memulai, pastikan telah terinstall:
 	* `if($file["name"] != null)` memeriksa apakah ada data file yang dikirim ke halaman ini.
     * `uploadAvatar($file, $avatar);` memproses upload file di fungsi `uploadAvatar()` dengan memasukan file yang baru diupload dan nama file foto profile yang sekarang dipakai.
 
+* Buat folder `avatar` pada direktori projek ini dibuat. 
 * Tambahkan script di file `profile.php`. Perhatikan tag HTML-nya, jangan sampai salah meletakan. 
 
 	**profile.php**
