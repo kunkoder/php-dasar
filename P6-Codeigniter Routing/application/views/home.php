@@ -4,18 +4,18 @@
 <head>
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	<link rel="apple-touch-icon" sizes="76x76" href="assets/img/apple-icon.png">
-	<link rel="icon" type="image/png" href="assets/img/favicon.png">
+	<link rel="apple-touch-icon" sizes="76x76" href="<?= base_url(); ?>assets/img/apple-icon.png">
+	<link rel="icon" type="image/png" href="<?= base_url(); ?>assets/img/favicon.png">
 	<title>
 		Home . Argon
 	</title>
 
 	<!-- Nucleo Icons -->
-	<link href="assets/css/nucleo-icons.css" rel="stylesheet" />
-	<link href="assets/css/nucleo-svg.css" rel="stylesheet" />
+	<link href="<?= base_url(); ?>assets/css/nucleo-icons.css" rel="stylesheet" />
+	<link href="<?= base_url(); ?>assets/css/nucleo-svg.css" rel="stylesheet" />
 
 	<!-- CSS Files -->
-	<link href="assets/css/argon-design-system.css?v=1.2.2" rel="stylesheet" />
+	<link href="<?= base_url(); ?>assets/css/argon-design-system.css?v=1.2.2" rel="stylesheet" />
 </head>
 
 <body class="index-page">
@@ -25,7 +25,7 @@
 		class="navbar navbar-main navbar-expand-lg bg-white navbar-light position-sticky top-0 shadow py-2">
 		<div class="container">
 			<a class="navbar-brand mr-lg-5" href="index.html">
-				<img src="assets/img/brand/blue.png">
+				<img src="<?= base_url(); ?>assets/img/brand/blue.png">
 			</a>
 			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar_global"
 				aria-controls="navbar_global" aria-expanded="false" aria-label="Toggle navigation">
@@ -36,7 +36,7 @@
 					<div class="row">
 						<div class="col-6 collapse-brand">
 							<a href="index.html">
-								<img src="assets/img/brand/blue.png">
+								<img src="<?= base_url(); ?>assets/img/brand/blue.png">
 							</a>
 						</div>
 						<div class="col-6 collapse-close">
@@ -116,7 +116,7 @@
 				</div>
 				<div class="row py-3 align-items-center">
 					<div class="col-sm-3 text-center">
-						<img src="assets/img/faces/team-1.jpg" alt="Rounded image" class="img-fluid rounded shadow"
+						<img src="<?= base_url(); ?>assets/img/faces/team-1.jpg" alt="Rounded image" class="img-fluid rounded shadow"
 							width="120">
 					</div>
 					<div class="col-sm-9">
@@ -133,7 +133,7 @@
 				</div>
 				<div class="row py-3 align-items-center">
 					<div class="col-sm-3 text-center">
-						<img src="assets/img/faces/team-1.jpg" alt="Rounded image" class="img-fluid rounded shadow"
+						<img src="<?= base_url(); ?>assets/img/faces/team-1.jpg" alt="Rounded image" class="img-fluid rounded shadow"
 							width="120">
 					</div>
 					<div class="col-sm-9">
@@ -150,7 +150,7 @@
 				</div>
 				<div class="row py-3 align-items-center">
 					<div class="col-sm-3 text-center">
-						<img src="assets/img/faces/team-1.jpg" alt="Rounded image" class="img-fluid rounded shadow"
+						<img src="<?= base_url(); ?>assets/img/faces/team-1.jpg" alt="Rounded image" class="img-fluid rounded shadow"
 							width="120">
 					</div>
 					<div class="col-sm-9">
@@ -178,10 +178,10 @@
 	</div>
 
 	<!--   Core JS Files   -->
-	<script src="assets/js/core/jquery.min.js" type="text/javascript"></script>
-	<script src="assets/js/core/popper.min.js" type="text/javascript"></script>
-	<script src="assets/js/core/bootstrap.min.js" type="text/javascript"></script>
-	<script src="assets/js/argon-design-system.min.js?v=1.2.2" type="text/javascript"></script>
+	<script src="<?= base_url(); ?>assets/js/core/jquery.min.js" type="text/javascript"></script>
+	<script src="<?= base_url(); ?>assets/js/core/popper.min.js" type="text/javascript"></script>
+	<script src="<?= base_url(); ?>assets/js/core/bootstrap.min.js" type="text/javascript"></script>
+	<script src="<?= base_url(); ?>assets/js/argon-design-system.min.js?v=1.2.2" type="text/javascript"></script>
 </body>
 
 </html>

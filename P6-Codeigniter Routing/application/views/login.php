@@ -4,18 +4,18 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="apple-touch-icon" sizes="76x76" href="assets/img/apple-icon.png">
-    <link rel="icon" type="image/png" href="assets/img/favicon.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="<?= base_url(); ?>assets/img/apple-icon.png">
+    <link rel="icon" type="image/png" href="<?= base_url(); ?>assets/img/favicon.png">
     <title>
         Login . Argon
     </title>
 
     <!-- Nucleo Icons -->
-    <link href="assets/css/nucleo-icons.css" rel="stylesheet" />
-    <link href="assets/css/nucleo-svg.css" rel="stylesheet" />
+    <link href="<?= base_url(); ?>assets/css/nucleo-icons.css" rel="stylesheet" />
+    <link href="<?= base_url(); ?>assets/css/nucleo-svg.css" rel="stylesheet" />
 
     <!-- CSS Files -->
-    <link href="assets/css/argon-design-system.css?v=1.2.2" rel="stylesheet" />
+    <link href="<?= base_url(); ?>assets/css/argon-design-system.css?v=1.2.2" rel="stylesheet" />
 </head>
 
 <body class="index-page">
@@ -89,10 +89,10 @@
     </div>
 
     <!--   Core JS Files   -->
-    <script src="assets/js/core/jquery.min.js" type="text/javascript"></script>
-    <script src="assets/js/core/popper.min.js" type="text/javascript"></script>
-    <script src="assets/js/core/bootstrap.min.js" type="text/javascript"></script>
-    <script src="assets/js/argon-design-system.min.js?v=1.2.2" type="text/javascript"></script>
+    <script src="<?= base_url(); ?>assets/js/core/jquery.min.js" type="text/javascript"></script>
+    <script src="<?= base_url(); ?>assets/js/core/popper.min.js" type="text/javascript"></script>
+    <script src="<?= base_url(); ?>assets/js/core/bootstrap.min.js" type="text/javascript"></script>
+    <script src="<?= base_url(); ?>assets/js/argon-design-system.min.js?v=1.2.2" type="text/javascript"></script>
 </body>
 
 </html>
