@@ -1,5 +1,5 @@
 
-# :closed_lock_with_key: Codeigniter Authentication
+# :memo: Codeigniter CRUD
 
 Folder ini berisi penerapan autentifikasi pada bahasa pemrograman PHP. Materi yang dibahas meliputi:
 * 
@@ -14,6 +14,6 @@ Sebelum memulai, pastikan telah terinstall:
 * Text editor
 * Web browser
 * Web server
-* Materi P6-Codeigniter Routing
+* Materi P7-Codeigniter Authentication
 
 ## :computer: Langkah Kerja
