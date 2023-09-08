@@ -1,11 +1,6 @@
 
 # :closed_lock_with_key: Codeigniter Authentication
 
-Folder ini berisi penerapan autentifikasi pada bahasa pemrograman PHP. Materi yang dibahas meliputi:
-* 
-* 
-* 
-
 ## :package: Prasyarat
 
 Sebelum memulai, pastikan telah terinstall:

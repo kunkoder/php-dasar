@@ -1,11 +1,6 @@
 
 # :memo: Codeigniter CRUD
 
-Folder ini berisi penerapan autentifikasi pada bahasa pemrograman PHP. Materi yang dibahas meliputi:
-* 
-* 
-* 
-
 ## :package: Prasyarat
 
 Sebelum memulai, pastikan telah terinstall:

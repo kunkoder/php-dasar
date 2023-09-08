@@ -1,11 +1,6 @@
 
 # :trident: Codeigniter Routing
 
-Folder ini berisi penerapan autentifikasi pada bahasa pemrograman PHP. Materi yang dibahas meliputi:
-* 
-* 
-* 
-
 ## :package: Prasyarat
 
 Sebelum memulai, pastikan telah terinstall:
